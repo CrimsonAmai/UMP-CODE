@@ -1,0 +1,7 @@
+(import, tabcompleter , prefix and messages)
+for (World world : Bukkit.getWorlds()) {
+            for (Chunk chunk : world.getLoadedChunks()) {
+                if (!chunksToKeep.contains(chunk)) {
+                    boolean unloaded = world.unloadChunk(chunk);
+                    if (unloaded) {
+                        unloadedChunks++;
