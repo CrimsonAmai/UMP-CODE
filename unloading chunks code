@@ -4,7 +4,6 @@
             chunksToKeep.add(player.getLocation().getChunk());
         }
 
-        int unloadedChunks = 0;
 
         for (World world : Bukkit.getWorlds()) {
             for (Chunk chunk : world.getLoadedChunks()) {
