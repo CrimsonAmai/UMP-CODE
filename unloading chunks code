@@ -1,0 +1,19 @@
+(there been  tab completer, imports , messages)
+
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            chunksToKeep.add(player.getLocation().getChunk());
+        }
+
+        int unloadedChunks = 0;
+
+        for (World world : Bukkit.getWorlds()) {
+            for (Chunk chunk : world.getLoadedChunks()) {
+                if (!chunksToKeep.contains(chunk)) {
+                    boolean unloaded = world.unloadChunk(chunk);
+                    if (unloaded) {
+                        unloadedChunks++;
+                    }
+                }
+            }
+        }
+
